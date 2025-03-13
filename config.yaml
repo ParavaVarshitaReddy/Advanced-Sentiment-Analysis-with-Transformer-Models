@@ -1,0 +1,13 @@
+model_name: xlm-roberta-base
+learning_rate: 1e-5
+batch_size: 16
+num_epochs: 3
+weight_decay: 0.01
+warmup_steps: 100
+max_grad_norm: 1.0
+eval_strategy: epoch
+save_strategy: epoch
+logging_steps: 50
+output_dir: ./results
+logging_dir: ./logs
+load_best_model_at_end: true
