@@ -1,58 +1,50 @@
-# Sentiment Analysis with XLM-RoBERTa
 
-## Overview
-This project implements a sentiment analysis model using **XLM-RoBERTa** for text classification. It fine-tunes transformer-based models on a dataset of Amazon reviews to predict sentiment with high accuracy.
+# Enhanced Sentiment Analysis with Transformer Models
 
-## Features
-- Uses **XLM-RoBERTa** and **Microsoft DeBERTa Large** for sentiment classification.
-- Implements **data preprocessing, tokenization, and fine-tuning**.
-- Achieves **95% accuracy** with XLM-RoBERTa.
-- Includes **early stopping and hyperparameter tuning** for optimization.
-- Utilizes **PyTorch, Hugging Face Transformers, and the Trainer API**.
+## 📌 Project Overview
+This project implements **Sentiment Analysis** using four transformer models:
+- **XLM-RoBERTa**
+- **BERT**
+- **DistilBERT Base Uncased**
+- **RoBERTa**
 
-## Setup
-### 1. Clone the Repository
+The objective is to classify textual reviews into sentiments (positive, negative, or neutral) and provide insights into product reviews.
+
+## 🚀 Features
+- Multi-model sentiment classification with **>90% accuracy**.
+- Supports **multiple languages** via translation.
+- Backend integration for real-time review analysis.
+
+## 📂 Dataset
+The dataset consists of two files:
+- **train.csv**: Used for training the models.
+- **test.csv**: Used for model evaluation.
+
+## ⚙️ Installation
+Clone this repository and install dependencies:
+
 ```bash
-git clone https://github.com/yourusername/Sentiment-Analysis-XLM-RoBERTa.git
-cd Sentiment-Analysis-XLM-RoBERTa
-```
-
-### 2. Install Dependencies
-```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 pip install -r requirements.txt
 ```
 
-### 3. Run the Training Script
+## 🛠️ Usage
+Run the sentiment analysis script:
+
 ```bash
-python main.py
+python sentiment_analysis.py
 ```
 
-## Project Structure
-```
-├── README.md
-├── requirements.txt
-├── train.csv  (Dataset file - Add .gitignore if needed)
-├── test.csv   (Dataset file - Add .gitignore if needed)
-├── main.py  (Main script for training and evaluation)
-├── utils.py (Helper functions for preprocessing and metrics)
-├── config.yaml (Configuration file for hyperparameters)
-├── models/
-│   ├── final_model/  (Folder for saving trained model)
-│   ├── tokenizer/  (Folder for saving tokenizer)
-└── .gitignore
+## 📊 Results
+The models achieved the following accuracy scores:
+- **XLM-RoBERTa**: 95%
+- **BERT**: 93.81%
+- **DistilBERT**: 93.02%
+- **RoBERTa**: 95.22%
+
+## 📜 License
+This project is open-source under the MIT License.
 ```
 
-## Results
-- Achieved **95% accuracy** using **XLM-RoBERTa**.
-- Model successfully classifies sentiment with optimized fine-tuning.
-
-## Future Improvements
-- Experiment with **larger datasets** for better generalization.
-- Deploy model as an **API for real-time inference**.
-- Implement **more transformer architectures** to compare performance.
-
-## Author
-Parava Varshita
-
-## License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+You can now copy and paste it directly into your `README.md` file. Let me know if you need any modifications! 🚀
