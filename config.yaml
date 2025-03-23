@@ -1,13 +1,72 @@
-model_name: xlm-roberta-base
-learning_rate: 1e-5
-batch_size: 16
-num_epochs: 3
-weight_decay: 0.01
-warmup_steps: 100
-max_grad_norm: 1.0
-eval_strategy: epoch
-save_strategy: epoch
-logging_steps: 50
-output_dir: ./results
-logging_dir: ./logs
-load_best_model_at_end: true
+models:
+  xlm-roberta:
+    model_name: "xlm-roberta-base"
+    learning_rate: 2e-5
+    batch_size: 16
+    num_epochs: 3
+    weight_decay: 0.01
+    warmup_steps: 100
+    max_grad_norm: 1.0
+    eval_strategy: "epoch"
+    save_strategy: "epoch"
+    logging_steps: 50
+    output_dir: "./results"
+    logging_dir: "./logs"
+    load_best_model_at_end: true
+    accuracy: 0.95  # Extracted from evaluation results&#8203;:contentReference[oaicite:0]{index=0}
+
+  bert:
+    model_name: "bert-base-uncased"
+    learning_rate: 2e-5
+    batch_size: 16
+    num_epochs: 4
+    weight_decay: 0.01
+    warmup_steps: 100
+    max_grad_norm: 1.0
+    eval_strategy: "epoch"
+    save_strategy: "epoch"
+    logging_steps: 50
+    output_dir: "./bert_results"
+    logging_dir: "./bert_logs"
+    load_best_model_at_end: true
+    accuracy: 93.81
+  
+
+  distilbert:
+    model_name: "distilbert-base-uncased"
+    learning_rate: 2e-5
+    batch_size: 16
+    num_epochs: 3
+    weight_decay: 0.01
+    warmup_steps: 100
+    max_grad_norm: 1.0
+    eval_strategy: "epoch"
+    save_strategy: "epoch"
+    logging_steps: 50
+    output_dir: "./distilbert_results"
+    logging_dir: "./distilbert_logs"
+    load_best_model_at_end: true
+    accuracy: 93.02  # Extracted from evaluation results&#8203;:contentReference[oaicite:2]{index=2}
+
+  roberta:
+    model_name: "roberta-base"
+    learning_rate: 1e-5
+    batch_size: 16
+    num_epochs: 4    weight_decay: 0.01
+    warmup_steps: 100
+    max_grad_norm: 1.0
+    eval_strategy: "epoch"
+    save_strategy: "epoch"
+    logging_steps: 50
+    output_dir: "./roberta_results"
+    logging_dir: "./roberta_logs"
+    load_best_model_at_end: true
+    accuracy:0.9522  # Extracted from evaluation results&#8203;:contentReference[oaicite:3]{index=3}
+
+dataset:
+  train_file: "train.csv"
+  test_file: "test.csv"
+  format: "csv"
+
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1-score"]
